@@ -71,7 +71,9 @@ float cnoise(vec3 P){
 }
 
 uniform float time;
+uniform vec2 hover;
 varying float vNoise;
+varying float hoverState;
 varying vec2 vUv;
 
 void main() {
@@ -93,11 +95,15 @@ void main() {
   // newposition.z += 0.05 * sin(dist * 40. + time);
 
   //Sphere
-  float noise = cnoise(3. * vec3(position.x, position.y, position.z + time/10.));
+  float noise = cnoise(3. * vec3(position.x, position.y, position.z + time / 30.));
   // newposition += 0.05 * normal * noise; // normal lengths
-  //
-  // vNoise = dist;
-  vNoise = noise;
+  float dist = distance(uv, hover);
+  // newposition.z += hoverState * 10. * sin(dist * 10. + time);
+  newposition.z += 10. * sin(dist * 10. + time);
+
+  // vNoise = hoverState * sin(dist * 10. - time);
+  vNoise = dist;
+  // vNoise = noise;
   vUv = uv;
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4( newposition, 1.0 );

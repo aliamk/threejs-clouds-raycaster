@@ -12,9 +12,15 @@
     left: 0;
 }
 
-#img {
+.img-text {
+    align-items: center;
+    text-align: center;
+}
+
+img {
     text-align: center;   
-    opacity: 0.5; 
-    height: 50%;
-    width: auto;
+    opacity: 0; 
+    width: 40em;
+    height: auto;
+    margin: 0.1em;
 }
