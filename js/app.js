@@ -8,7 +8,8 @@ import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertex.glsl";
 
 import ON from '../img/ON.jpg'
-import pink from '../img/pink.png'
+// import pink from '../img/pink.png'
+// import pyramidSAmerica from '../img/pyramidSAmerica.jpg'
 
 
 export default class Sketch {
