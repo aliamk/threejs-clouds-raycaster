@@ -19,8 +19,7 @@ void main()	{
 	//
 	// gl_FragColor = vec4(finalColor, 1.);
 	gl_FragColor = vec4(vUv, 0., 1.);
-	gl_FragColor = vec4(vNoise, 0., 0., 1.);
-	// gl_FragColor.rgb += 0.1 * vec3(vNoise);
-	// gl_FragColor = onLogo;
-
+	// gl_FragColor = vec4(vNoise, 0., 0., 1.);
+	gl_FragColor = onLogo;
+	gl_FragColor.rgb += 0.15 * vec3(vNoise);
 }

@@ -98,10 +98,10 @@ void main() {
   float noise = cnoise(3. * vec3(position.x, position.y, position.z + time / 30.));
   // newposition += 0.05 * normal * noise; // normal lengths
   float dist = distance(uv, hover);
-  newposition.z += hoverState * 10. * sin(dist * 10. + time);
+  newposition.z += hoverState * 50. * sin(dist * 10. + time);
   // newposition.z += 10. * sin(dist * 10. + time);
 
-  // vNoise = hoverState * sin(dist * 10. - time);
+  vNoise = hoverState * sin(dist * 10. - time);
   vNoise = dist;
   // vNoise = noise;
   vUv = uv;
